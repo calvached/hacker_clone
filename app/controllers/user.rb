@@ -10,12 +10,7 @@ end
 
 post '/login' do
   user = User.find_by_username(params[:username])
-  if user.password == params[:password]
-    session[:id] = user.id
-    redirect '/'
-  else
-    "Invalid password"
-  end
+  auth(user, params)
 end
 
 post '/create_user' do

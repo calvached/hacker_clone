@@ -1,0 +1,13 @@
+<h3>Comments: </h3>
+<a href="/">Home</a>
+<ol>
+<% comments = Comment.where(user_id: @user_id) %>
+<% comments.reverse.each do |comment| %>
+<li><a href="/comment/<%= comment.post_id %>"><%= Post.find(comment.post_id).title %></a><br><%= comment.content %></li>
+<% end %>
+</ol>
+
+<!-- Display Post that comment originated from
+Display the comment.content -->
+
+<!-- /comment/3 -->
