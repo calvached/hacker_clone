@@ -1,0 +1,5 @@
+<h3>Profile</h3>
+<p>Username: <%= user = User.find(session[:id]).username %></p>
+
+<a href="#">View all Comments</a>
+<a href="/view_posts_by_user/<%= user %>">View all Posts</a>
